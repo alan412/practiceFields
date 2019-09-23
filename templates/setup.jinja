@@ -1,0 +1,23 @@
+{% extends "base.jinja" %}
+{% block title %}Setup{% endblock %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<form action="setup" method="post">
+<table>
+{% for field in form %}
+    <tr>
+        <th>{{ field.label }}</th>
+        <td>{{ field }}</td>
+     {% for error in field.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+    {% endfor %}       
+    </tr>
+{% endfor %}
+    </table>
+    {{ form.submit() }}
+    
+</form>
+{% endblock %}
+

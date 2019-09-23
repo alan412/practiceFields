@@ -1,0 +1,2 @@
+FLASK_APP=practiceFields.py
+FLASK_ENV=development
